@@ -1,0 +1,43 @@
+# name: Build and deploy
+
+# on:
+#   # pull_request:
+#   push:
+#     branches:
+#       - master
+
+# jobs:
+#   # build:
+#   lint:
+#     runs-on: ubuntu-latest
+#     strategy:
+#      matrix:
+#       node-version: [12.x]
+#     steps:
+#      - uses: action/checkout@v2
+#      - uses: action/setup-node@v1
+#        with:
+#         node-version: ${{ matrix.node-version }}
+#      - run: npm ci
+#      - run: npm test
+
+# jobs:
+#   my-job:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: my-step
+#         run: echo "Hello World!"
+
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node12'
+  main: 'index.js'
